@@ -52,10 +52,16 @@
             </v-col>
             <v-col cols="3"> </v-col>
             <v-col cols="3">
-              <button type="submit" class="botonCercle" @click="sendEmail"> Enviar </button>
+              <button
+                type="submit"
+                class="botonCercle"
+                @click="sendEmail, (this.snackbar.visible = true)"
+              >
+                Enviar
+              </button>
             </v-col>
             <v-col cols="3">
-              <button @click="clear" class="botonCercle"> Limpiar campos </button>
+              <button @click="clear" class="botonCercle">Limpiar campos</button>
             </v-col>
           </v-row>
         </v-container>
@@ -63,7 +69,6 @@
       <v-container>
         <v-snackbar
           v-model="snackbar.visible"
-          
           color="#00E676"
           :multi-line="snackbar.mode === 'multi-line'"
           :top="snackbar.position === 'top'"
@@ -88,7 +93,7 @@
 </template>
 
 <script>
-import emailjs from 'emailjs-com';
+import emailjs from "emailjs-com";
 import { validationMixin } from "vuelidate";
 import { required, minLength, email } from "vuelidate/lib/validators";
 
@@ -156,12 +161,14 @@ export default {
         .then(
           (result) => {
             console.log("SUCCESS!", result.status, result.text);
+            this.snackbar.visible = true;
           },
           (error) => {
             console.log("FAILED...", error);
           }
         );
-        e.target.reset();
+
+      e.target.reset();
     },
     banderaCheck(array) {
       if (array.length === 0) {

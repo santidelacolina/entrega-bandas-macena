@@ -26,8 +26,8 @@ export default {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: red;
-  color: rgba(231, 233, 127, 0.308);
+  background-color: rgba(231, 233, 127, 0.308);
+  color: rgb(0, 0, 0);
   text-align: center;
 }
 </style>
