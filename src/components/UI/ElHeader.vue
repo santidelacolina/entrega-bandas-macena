@@ -2,20 +2,17 @@
   <v-container fluid>
     <v-row align-content="center">
       <v-col cols="5" md="2">
-        <v-img
-          src="//www.cercle.io/images/logo.png"
-          height="100px"
-          width="100px"
-        >
-        </v-img>
-      </v-col>
-      <v-col cols="1">
-        <a class="botonCercle" href="#banda-favorita"> Bandas </a>
-      </v-col>
-      <v-col cols="1s">
-        <a class="botonCercle" href="#contactanos"> Contacto </a>
+        <v-img :src="headerLogo" height="100px" width="auto"> </v-img>
       </v-col>
       <v-col cols="2"></v-col>
+      <v-col cols="1">
+        <!-- <a class="botonCercle" href="#banda-favorita"> Bandas </a> -->
+        <router-link class="botonCercle" to="/artistas"> Artistas </router-link>
+      </v-col>
+      <v-col cols="1">
+        <!-- <a class="botonCercle" href="#contactanos"> Contacto </a> -->
+        <router-link class="botonCercle" to="/contactanos"> Contacto </router-link>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -24,7 +21,7 @@
 export default {
   data() {
     return {
-      headerFondo: require("../assets/mural.jpg"),
+      headerLogo: require("../../assets/MACENAMUSICLOGO.png"),
     };
   },
 };
@@ -47,7 +44,7 @@ export default {
   font-weight: 200;
   color: rgba(255, 255, 255, 0.8);
   max-width: 100%;
-  
+
   background-color: transparent;
   cursor: pointer;
 }

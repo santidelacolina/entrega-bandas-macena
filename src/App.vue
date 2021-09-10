@@ -7,42 +7,45 @@ hacer scroll hasta la seccion indicada en el btn // crear una carpeta assets:
 ahi se guardan las imagenes, iconos, fondos, tipografias. -->
 <template>
   <v-container fluid ma-0 pa-0 class="contenedor">
-   
-    <el-header></el-header>
+    <router-view></router-view>
+    <div id="divHome">
+      <router-link to="/"
+        ><v-icon x-large dark>mdi-home-circle</v-icon></router-link
+      >
+    </div>
+    <el-carrusel></el-carrusel>
+    <footer>
+      <el-footer></el-footer>
+    </footer>
+    <!-- <el-header></el-header>
 
-      <el-carrusel></el-carrusel>
       <banda-favorita > </banda-favorita>
       <el-form ></el-form>
-      <div id="divHome">
-        <v-btn id="botonHome" x-small href="#">Arriba</v-btn>
-      </div>
     
     <footer>
-      <!-- <h4><a href="#fondo">#</a>Fondo</h4> -->
-    </footer>
+      <h4><a href="#fondo">#</a>Fondo</h4>
+    </footer> -->
   </v-container>
 </template>
 
 <script>
-import ElHeader from "./components/ElHeader.vue";
 import ElCarrusel from "./components/ElCarrusel.vue";
-import BandaFavorita from "./components/BandaFavorita.vue";
-import ElForm from "./components/ElForm.vue";
+import ElFooter from './components/UI/ElFooter.vue'
 export default {
-  components: { ElCarrusel, BandaFavorita, ElHeader, ElForm },
+  components: { ElCarrusel, ElFooter },
   data() {
     return {};
   },
+  // created() {
+  //   this.$store.dispatch("initBandas");
+  // },
 };
 </script>
 <style>
-
 .body {
   width: 100%;
   margin: 0;
   display: block;
-
-  
 }
 .transparente {
   background-color: rgba(0, 0, 0, 0.4);
