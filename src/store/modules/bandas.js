@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const state = {
   bandas: [
     {
@@ -53,6 +55,11 @@ const actions = {
   changeInfo({ commit }, payload) {
     commit("changeInfo", payload);
   },
+  
+  async getBandas({commit}) {
+      const res = await axios.get('https://bandas-macena-default-rtdb.firebaseio.com/')
+      commit('SET_BANDAS',res.data)
+  }
 };
 const getters = {
   bandas: (state) => {

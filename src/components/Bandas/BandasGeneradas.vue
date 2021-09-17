@@ -78,6 +78,7 @@
 
 <script>
 import axios from "axios";
+import {mapActions} from 'vuex';
 export default {
   data() {
     return {
@@ -88,6 +89,9 @@ export default {
   },
 
   methods: {
+    ...mapActions([
+      'SET_BANDAS'
+    ]),
     editarBanda() {},
     borrarBanda(index) {
       this.bandasGeneradas.splice(index, 1);

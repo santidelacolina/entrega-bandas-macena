@@ -14,9 +14,9 @@ ahi se guardan las imagenes, iconos, fondos, tipografias. -->
       >
     </div>
     <el-carrusel></el-carrusel>
-    <footer>
-      <el-footer></el-footer>
-    </footer>
+
+    <el-footer></el-footer>
+
     <!-- <el-header></el-header>
 
       <banda-favorita > </banda-favorita>
@@ -30,7 +30,7 @@ ahi se guardan las imagenes, iconos, fondos, tipografias. -->
 
 <script>
 import ElCarrusel from "./components/ElCarrusel.vue";
-import ElFooter from './components/UI/ElFooter.vue'
+import ElFooter from "./components/UI/ElFooter.vue";
 export default {
   components: { ElCarrusel, ElFooter },
   data() {
@@ -56,6 +56,7 @@ export default {
   font-size: 20px;
   position: absolute;
   color: rgb(255, 255, 255);
+  padding-bottom: 2.5rem;
   /* width: 100%;
   height: 100%;
   left: 0;
